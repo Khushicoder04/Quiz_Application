@@ -111,7 +111,7 @@ const [stats, setStats] = useState({
             </p>
 
             <button
-              onClick={() => navigate("/quiz-categories")}
+              onClick={() => navigate("/quizzes")}
               className="mt-7 inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold cursor-pointer transition"
             >
               Explore Quizzes
@@ -208,90 +208,91 @@ const [stats, setStats] = useState({
         </section>
 
         {/* Quiz Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-          {/* Main Quiz Card */}
-          <div className="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-3xl p-8">
+  {/* Quick Quiz */}
+  <div className="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-3xl p-8">
 
-            <div className="flex items-center justify-between mb-6">
+    <div className="flex items-center justify-between mb-6">
 
-              <div>
-                <p className="text-blue-400 text-sm font-medium">
-                  Start Learning
-                </p>
+      <div>
+        <p className="text-blue-400 text-sm font-medium">
+          Start Learning
+        </p>
 
-                <h3 className="text-2xl font-bold mt-1">
-                  Choose Your Quiz
-                </h3>
-              </div>
+        <h3 className="text-2xl font-bold mt-1">
+          Explore Quiz Categories
+        </h3>
+      </div>
 
-              <BookOpen
-                size={32}
-                className="text-blue-400"
-              />
+      <BookOpen
+        size={32}
+        className="text-blue-400"
+      />
 
-            </div>
+    </div>
 
-            <p className="text-slate-400 leading-relaxed mb-7">
-              Select a subject and challenge yourself with carefully
-              designed questions. Improve your score with every attempt.
-            </p>
+    <p className="text-slate-400 leading-relaxed mb-7">
+      Choose from DSA, Java, DBMS, Web Development,
+      Computer Networks, and OOPs. Select a subject and
+      start practicing.
+    </p>
 
-            <button
-              onClick={() => navigate("/quizzes")}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold cursor-pointer transition"
-            >
-              Browse Quizzes
-              <ArrowRight size={19} />
-            </button>
+    <button
+      onClick={() => navigate("/quiz-categories")}
+      className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold cursor-pointer transition"
+    >
+      Explore Categories
+      <ArrowRight size={19} />
+    </button>
 
-          </div>
+  </div>
 
-          {/* Quick Info */}
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+  {/* Quick Info */}
+  <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8">
 
-            <h3 className="text-xl font-bold mb-6">
-              Your Progress
-            </h3>
+    <h3 className="text-xl font-bold mb-6">
+      Your Progress
+    </h3>
 
-            <div className="space-y-5">
+    <div className="space-y-5">
 
-              <div>
-                <div className="flex justify-between text-sm mb-2">
-                  <span className="text-slate-400">
-                    Overall Progress
-                  </span>
+      <div>
+        <div className="flex justify-between text-sm mb-2">
+          <span className="text-slate-400">
+            Overall Progress
+          </span>
 
-                  <span className="text-white font-medium">
-  {stats.averageScore}%
-</span>
-                </div>
+          <span className="text-white font-medium">
+            {stats.averageScore}%
+          </span>
+        </div>
 
-                <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
-                  <div
-  className="h-full bg-blue-600 rounded-full transition-all duration-500"
-  style={{
-    width: `${stats.averageScore}%`,
-  }}
-/>
-                </div>
-              </div>
+        <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-blue-600 rounded-full transition-all duration-500"
+            style={{
+              width: `${stats.averageScore}%`,
+            }}
+          />
+        </div>
+      </div>
 
-              <div className="pt-4 border-t border-slate-800">
-                <p className="text-slate-400 text-sm">
-                  Keep practicing
-                </p>
+      <div className="pt-4 border-t border-slate-800">
+        <p className="text-slate-400 text-sm">
+          Keep practicing
+        </p>
 
-                <p className="text-white font-medium mt-1">
-                  Your quiz journey starts here 🚀
-                </p>
-              </div>
+        <p className="text-white font-medium mt-1">
+          Your quiz journey starts here 🚀
+        </p>
+      </div>
 
-            </div>
+    </div>
 
-          </div>
+  </div>
 
-        </section>
+</section>
 
       </main>
 

@@ -1,0 +1,62 @@
+{
+  "title": "Computer Networks Fundamentals",
+  "category": "Computer Networks",
+  "difficulty": "Easy",
+  "questions": [
+    {
+      "question": "What does IP stand for in computer networking?",
+      "options": [
+        "Internet Protocol",
+        "Internet Process",
+        "Internal Protocol",
+        "Information Protocol"
+      ],
+      "correctAnswer": "Internet Protocol",
+      "explanation": "IP stands for Internet Protocol and is responsible for addressing and routing packets across networks."
+    },
+    {
+      "question": "Which protocol is used to securely transfer web pages?",
+      "options": [
+        "HTTP",
+        "HTTPS",
+        "FTP",
+        "SMTP"
+      ],
+      "correctAnswer": "HTTPS",
+      "explanation": "HTTPS is HTTP with encryption provided through TLS, making web communication more secure."
+    },
+    {
+      "question": "Which device connects different networks together?",
+      "options": [
+        "Switch",
+        "Router",
+        "Hub",
+        "Repeater"
+      ],
+      "correctAnswer": "Router",
+      "explanation": "A router connects different networks and forwards packets between them."
+    },
+    {
+      "question": "Which layer of the OSI model is responsible for routing?",
+      "options": [
+        "Physical Layer",
+        "Data Link Layer",
+        "Network Layer",
+        "Transport Layer"
+      ],
+      "correctAnswer": "Network Layer",
+      "explanation": "The Network Layer handles logical addressing and routing of packets between networks."
+    },
+    {
+      "question": "Which protocol is commonly used to send emails?",
+      "options": [
+        "FTP",
+        "SMTP",
+        "HTTP",
+        "DNS"
+      ],
+      "correctAnswer": "SMTP",
+      "explanation": "SMTP, or Simple Mail Transfer Protocol, is commonly used to send email messages."
+    }
+  ]
+}

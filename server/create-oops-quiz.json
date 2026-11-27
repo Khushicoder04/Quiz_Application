@@ -1,0 +1,62 @@
+{
+  "title": "OOPs Fundamentals",
+  "category": "OOPs",
+  "difficulty": "Easy",
+  "questions": [
+    {
+      "question": "Which concept allows a class to acquire properties and methods of another class?",
+      "options": [
+        "Encapsulation",
+        "Inheritance",
+        "Polymorphism",
+        "Abstraction"
+      ],
+      "correctAnswer": "Inheritance",
+      "explanation": "Inheritance allows a child class to acquire properties and methods from a parent class."
+    },
+    {
+      "question": "Which OOP concept hides internal implementation details?",
+      "options": [
+        "Inheritance",
+        "Polymorphism",
+        "Abstraction",
+        "Compilation"
+      ],
+      "correctAnswer": "Abstraction",
+      "explanation": "Abstraction hides unnecessary implementation details and exposes only essential features."
+    },
+    {
+      "question": "Which concept means one interface can have multiple implementations?",
+      "options": [
+        "Encapsulation",
+        "Polymorphism",
+        "Inheritance",
+        "Abstraction"
+      ],
+      "correctAnswer": "Polymorphism",
+      "explanation": "Polymorphism allows the same interface or method concept to behave differently in different situations."
+    },
+    {
+      "question": "Which concept bundles data and methods together?",
+      "options": [
+        "Encapsulation",
+        "Inheritance",
+        "Polymorphism",
+        "Abstraction"
+      ],
+      "correctAnswer": "Encapsulation",
+      "explanation": "Encapsulation combines data and related methods into a single unit, such as a class."
+    },
+    {
+      "question": "What is an object in OOP?",
+      "options": [
+        "A blueprint for a class",
+        "An instance of a class",
+        "A database table",
+        "A programming language"
+      ],
+      "correctAnswer": "An instance of a class",
+      "explanation": "An object is an instance of a class containing its own state and behavior."
+    }
+  ]
+}

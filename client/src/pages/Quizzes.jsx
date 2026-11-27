@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import {
   BookOpen,
   ArrowRight,
@@ -12,9 +15,15 @@ function Quizzes() {
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const selectedCategory =
+    location.state?.category || null;
 
   useEffect(() => {
     const fetchQuizzes = async () => {
+      setLoading(true);
+
       try {
         const response = await fetch(
           "http://localhost:5000/api/quizzes"
@@ -22,7 +31,21 @@ function Quizzes() {
 
         const data = await response.json();
 
-        if (response.ok) {
+        if (!response.ok) {
+          throw new Error(
+            data.message || "Failed to fetch quizzes"
+          );
+        }
+
+        if (selectedCategory) {
+          const filteredQuizzes = data.filter(
+            (quiz) =>
+              quiz.category.toLowerCase() ===
+              selectedCategory.toLowerCase()
+          );
+
+          setQuizzes(filteredQuizzes);
+        } else {
           setQuizzes(data);
         }
       } catch (error) {
@@ -30,13 +53,15 @@ function Quizzes() {
           "Failed to fetch quizzes:",
           error
         );
+
+        setQuizzes([]);
       } finally {
         setLoading(false);
       }
     };
 
     fetchQuizzes();
-  }, []);
+  }, [selectedCategory]);
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
@@ -71,59 +96,68 @@ function Quizzes() {
         {/* Header */}
         <div className="mb-10">
           <p className="mb-2 text-sm font-medium text-blue-400">
-            Test Your Knowledge
+            {selectedCategory
+              ? `${selectedCategory} Practice`
+              : "Test Your Knowledge"}
           </p>
 
           <h2 className="text-4xl font-bold">
-            Choose Your Quiz
+            {selectedCategory
+              ? `${selectedCategory} Quizzes`
+              : "Choose Your Quiz"}
           </h2>
 
           <p className="mt-3 max-w-2xl text-slate-400">
-            Select a quiz, test your knowledge, and
-            improve your score with every attempt.
+            {selectedCategory
+              ? `Practice ${selectedCategory} questions and improve your score with every attempt.`
+              : "Select a quiz, test your knowledge, and improve your score with every attempt."}
           </p>
         </div>
 
-        {/* PDF Quiz */}
-        <div
-          onClick={() => navigate("/pdf-quiz")}
-          className="mb-8 cursor-pointer rounded-3xl border border-indigo-500/30 bg-gradient-to-r from-indigo-600/15 to-purple-600/10 p-7 transition hover:-translate-y-1 hover:border-indigo-500/60"
-        >
-          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+        {/* PDF Generator - only on All Quizzes */}
+        {!selectedCategory && (
+          <div
+            onClick={() => navigate("/pdf-quiz")}
+            className="mb-8 cursor-pointer rounded-3xl border border-indigo-500/30 bg-gradient-to-r from-indigo-600/15 to-purple-600/10 p-7 transition hover:-translate-y-1 hover:border-indigo-500/60"
+          >
+            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
 
-            <div className="flex items-start gap-4">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-indigo-500/10">
-                <FileText
-                  size={28}
-                  className="text-indigo-400"
-                />
+              <div className="flex items-start gap-4">
+
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-indigo-500/10">
+                  <FileText
+                    size={28}
+                    className="text-indigo-400"
+                  />
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold">
+                    AI PDF Quiz Generator
+                  </h3>
+
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-400">
+                    Upload any PDF and generate quiz
+                    questions from its content automatically.
+                  </p>
+                </div>
+
               </div>
 
-              <div>
-                <h3 className="text-xl font-bold">
-                  AI PDF Quiz Generator
-                </h3>
-
-                <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-400">
-                  Upload any PDF and generate quiz
-                  questions from its content automatically.
-                </p>
+              <div className="flex items-center gap-2 text-indigo-400">
+                Generate Quiz
+                <ArrowRight size={18} />
               </div>
-            </div>
 
-            <div className="flex items-center gap-2 text-indigo-400">
-              Generate Quiz
-              <ArrowRight size={18} />
             </div>
-
           </div>
-        </div>
+        )}
 
         {/* Loading */}
         {loading && (
-          <div className="flex items-center justify-center py-16">
+          <div className="flex items-center justify-center py-20">
             <Loader2
-              size={32}
+              size={34}
               className="animate-spin text-blue-400"
             />
           </div>
@@ -132,19 +166,27 @@ function Quizzes() {
         {/* No quizzes */}
         {!loading && quizzes.length === 0 && (
           <div className="rounded-2xl border border-slate-800 bg-slate-900 p-10 text-center">
+
             <BookOpen
-              size={40}
+              size={42}
               className="mx-auto mb-4 text-slate-600"
             />
 
             <h3 className="text-xl font-semibold">
-              No quizzes available
+              No {selectedCategory || ""} quizzes available
             </h3>
 
             <p className="mt-2 text-slate-400">
-              There are no standard quizzes available
-              right now.
+              We haven't added a quiz for this category yet.
             </p>
+
+            <button
+              onClick={() => navigate("/quiz-categories")}
+              className="mt-6 rounded-xl bg-blue-600 px-5 py-3 font-semibold transition hover:bg-blue-700"
+            >
+              Back to Categories
+            </button>
+
           </div>
         )}
 
@@ -159,6 +201,7 @@ function Quizzes() {
               >
 
                 <div className="mb-5 flex items-start justify-between">
+
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10">
                     <BookOpen
                       size={24}
@@ -169,6 +212,7 @@ function Quizzes() {
                   <span className="rounded-full bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-400">
                     {quiz.difficulty}
                   </span>
+
                 </div>
 
                 <h3 className="text-xl font-bold">

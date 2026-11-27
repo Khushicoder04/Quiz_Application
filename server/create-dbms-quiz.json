@@ -1,0 +1,62 @@
+{
+  "title": "DBMS Fundamentals",
+  "category": "DBMS",
+  "difficulty": "Easy",
+  "questions": [
+    {
+      "question": "What does DBMS stand for?",
+      "options": [
+        "Database Management System",
+        "Data Backup Management System",
+        "Database Monitoring Service",
+        "Data Management Software"
+      ],
+      "correctAnswer": "Database Management System",
+      "explanation": "DBMS stands for Database Management System, which is software used to create, store, manage, and retrieve data from databases."
+    },
+    {
+      "question": "Which key uniquely identifies each record in a table?",
+      "options": [
+        "Foreign Key",
+        "Primary Key",
+        "Candidate Key",
+        "Composite Key"
+      ],
+      "correctAnswer": "Primary Key",
+      "explanation": "A primary key uniquely identifies every record in a database table."
+    },
+    {
+      "question": "Which SQL command is used to retrieve data from a table?",
+      "options": [
+        "INSERT",
+        "UPDATE",
+        "SELECT",
+        "DELETE"
+      ],
+      "correctAnswer": "SELECT",
+      "explanation": "The SELECT statement is used to retrieve data from one or more database tables."
+    },
+    {
+      "question": "Which normal form removes repeating groups and ensures atomic values?",
+      "options": [
+        "First Normal Form",
+        "Second Normal Form",
+        "Third Normal Form",
+        "Boyce-Codd Normal Form"
+      ],
+      "correctAnswer": "First Normal Form",
+      "explanation": "First Normal Form requires each attribute to contain atomic values and removes repeating groups."
+    },
+    {
+      "question": "Which SQL command is used to permanently remove a table?",
+      "options": [
+        "DELETE",
+        "REMOVE",
+        "DROP",
+        "CLEAR"
+      ],
+      "correctAnswer": "DROP",
+      "explanation": "The DROP command removes the table structure and its data from the database."
+    }
+  ]
+}

@@ -52,6 +52,14 @@ function QuizCategories() {
     },
   ];
 
+  const handleCategoryClick = (category) => {
+    navigate("/quizzes", {
+      state: {
+        category,
+      },
+    });
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
 
@@ -93,8 +101,7 @@ function QuizCategories() {
           </h2>
 
           <p className="mt-3 max-w-2xl text-slate-400">
-            Pick a subject and start testing your
-            knowledge.
+            Pick a subject and start testing your knowledge.
           </p>
         </div>
 
@@ -123,7 +130,9 @@ function QuizCategories() {
                 </p>
 
                 <button
-                  onClick={() => navigate("/quizzes")}
+                  onClick={() =>
+                    handleCategoryClick(category.title)
+                  }
                   className="mt-6 flex items-center gap-2 font-semibold text-blue-400 transition hover:text-blue-300"
                 >
                   View Quizzes
@@ -156,8 +165,7 @@ function QuizCategories() {
               </h3>
 
               <p className="mt-1 text-sm text-slate-400">
-                Upload any PDF and create a quiz from
-                its content.
+                Upload any PDF and create a quiz from its content.
               </p>
             </div>
 

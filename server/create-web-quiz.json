@@ -1,0 +1,62 @@
+{
+  "title": "Web Development Basics",
+  "category": "Web Development",
+  "difficulty": "Easy",
+  "questions": [
+    {
+      "question": "What does HTML stand for?",
+      "options": [
+        "Hyper Text Markup Language",
+        "High Text Machine Language",
+        "Hyperlink Text Management Language",
+        "Home Tool Markup Language"
+      ],
+      "correctAnswer": "Hyper Text Markup Language",
+      "explanation": "HTML stands for Hyper Text Markup Language and is used to structure web pages."
+    },
+    {
+      "question": "Which language is mainly used to style web pages?",
+      "options": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SQL"
+      ],
+      "correctAnswer": "CSS",
+      "explanation": "CSS, or Cascading Style Sheets, is used to control the presentation and styling of web pages."
+    },
+    {
+      "question": "Which language is commonly used to add interactivity to web pages?",
+      "options": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "XML"
+      ],
+      "correctAnswer": "JavaScript",
+      "explanation": "JavaScript is commonly used to add dynamic behavior and interactivity to web pages."
+    },
+    {
+      "question": "Which HTML tag is used to create a hyperlink?",
+      "options": [
+        "<link>",
+        "<a>",
+        "<href>",
+        "<url>"
+      ],
+      "correctAnswer": "<a>",
+      "explanation": "The <a> anchor tag is used to create hyperlinks in HTML."
+    },
+    {
+      "question": "Which HTTP method is commonly used to retrieve data from a server?",
+      "options": [
+        "POST",
+        "PUT",
+        "GET",
+        "DELETE"
+      ],
+      "correctAnswer": "GET",
+      "explanation": "The GET HTTP method is commonly used to request or retrieve data from a server."
+    }
+  ]
+}

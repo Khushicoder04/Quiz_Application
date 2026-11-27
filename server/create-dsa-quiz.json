@@ -1,0 +1,62 @@
+{
+  "title": "DSA Fundamentals",
+  "category": "DSA",
+  "difficulty": "Easy",
+  "questions": [
+    {
+      "question": "Which data structure follows the Last In First Out (LIFO) principle?",
+      "options": [
+        "Queue",
+        "Stack",
+        "Linked List",
+        "Array"
+      ],
+      "correctAnswer": "Stack",
+      "explanation": "A stack follows the LIFO principle, meaning the last element inserted is the first one removed."
+    },
+    {
+      "question": "What is the time complexity of binary search on a sorted array?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n²)",
+        "O(1)"
+      ],
+      "correctAnswer": "O(log n)",
+      "explanation": "Binary search repeatedly divides the search space in half, resulting in O(log n) time complexity."
+    },
+    {
+      "question": "Which data structure is commonly used for Breadth First Search (BFS)?",
+      "options": [
+        "Stack",
+        "Queue",
+        "Heap",
+        "Hash Table"
+      ],
+      "correctAnswer": "Queue",
+      "explanation": "BFS uses a queue to process vertices level by level."
+    },
+    {
+      "question": "Which sorting algorithm has an average time complexity of O(n log n)?",
+      "options": [
+        "Bubble Sort",
+        "Selection Sort",
+        "Merge Sort",
+        "Linear Search"
+      ],
+      "correctAnswer": "Merge Sort",
+      "explanation": "Merge Sort divides the array recursively and merges the sorted parts, giving an average time complexity of O(n log n)."
+    },
+    {
+      "question": "Which data structure is used to represent hierarchical relationships?",
+      "options": [
+        "Stack",
+        "Queue",
+        "Tree",
+        "Array"
+      ],
+      "correctAnswer": "Tree",
+      "explanation": "A tree is a hierarchical data structure where elements are organized in parent-child relationships."
+    }
+  ]
+}
