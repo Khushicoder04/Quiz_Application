@@ -1,0 +1,62 @@
+{
+  "title": "Java Basics",
+  "category": "Java",
+  "difficulty": "Easy",
+  "questions": [
+    {
+      "question": "Which keyword is used to inherit a class in Java?",
+      "options": [
+        "implements",
+        "extends",
+        "inherits",
+        "super"
+      ],
+      "correctAnswer": "extends",
+      "explanation": "The extends keyword is used when one class inherits another class in Java."
+    },
+    {
+      "question": "Which method is the entry point of a Java application?",
+      "options": [
+        "start()",
+        "run()",
+        "main()",
+        "execute()"
+      ],
+      "correctAnswer": "main()",
+      "explanation": "The main() method is the standard entry point of a Java application."
+    },
+    {
+      "question": "Which data type is used to store true or false values?",
+      "options": [
+        "int",
+        "boolean",
+        "char",
+        "double"
+      ],
+      "correctAnswer": "boolean",
+      "explanation": "The boolean data type stores either true or false."
+    },
+    {
+      "question": "Which keyword is used to create an object in Java?",
+      "options": [
+        "class",
+        "object",
+        "new",
+        "create"
+      ],
+      "correctAnswer": "new",
+      "explanation": "The new keyword is used to create an object from a class."
+    },
+    {
+      "question": "Which collection does not allow duplicate elements?",
+      "options": [
+        "ArrayList",
+        "LinkedList",
+        "HashSet",
+        "Vector"
+      ],
+      "correctAnswer": "HashSet",
+      "explanation": "HashSet stores unique elements and does not allow duplicates."
+    }
+  ]
+}
